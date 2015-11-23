@@ -16,10 +16,8 @@ html {
 
 @media(min-width:767px) {
     .navbar {
-        padding: 20px 0;
-        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
-        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
-        transition: background .5s ease-in-out,padding .5s ease-in-out;
+        padding: 5px 0;
+
     }
 
     .top-nav-collapse {
@@ -30,16 +28,28 @@ html {
 /* Demo Sections - You can use these as guides or delete them - the scroller will work with any sort of height, fixed, undefined, or percentage based.
 The padding is very important to make sure the scrollspy picks up the right area when scrolled to. Adjust the margin and padding of sections and children
 of those sections to manage the look and feel of the site. */
-
 .intro-section {
     height: 100%;
     padding-top: 150px;
     text-align: center;
     background: teal;
 }
-
-.about-section {
+.home-section {
     height: 100%;
     padding-top: 150px;
     text-align: center;
-    background: rgba(0,0,0,0.5)
+    background: teal;
+}
+
+.login-section {
+    height: 100%;
+    padding-top: 150px;
+    text-align: center;
+    background: teal;
+  }
+  .signup-section {
+      height: 100%;
+      padding-top: 150px;
+      text-align: center;
+      background: teal;
+  }
