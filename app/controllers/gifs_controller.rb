@@ -1,8 +1,8 @@
-class GifController < ApplicationController
+class GifsController < ApplicationController
 
   def index
-     @gifs = Gif.order("date DESC")
-     @gifs = Gif.new
+     @gifs = Gif.order("created_at DESC")
+     @gif = Gif.new
    end
 
    def show
