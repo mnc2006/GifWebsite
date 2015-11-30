@@ -1,0 +1,5 @@
+<%= bootstrap_form_for(@gif, remote: true) do |f| %>
+  <%= f.text_field :link, :class => "link_field" %>
+  <%= f.date_field :date %>
+  <%= f.submit %>
+<% end %>

@@ -1,10 +1,8 @@
 class UserController < ApplicationController
 
-  def new
+acts_as_authlogic do |c|
+  c.crypto_provider = Authlogic::CryptoProviders::BCrypt
   end
-
-
-
 
 
 end
