@@ -9,7 +9,25 @@
 </div>
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
+<%= link_to "Add a new gif!", new_gif_path, :class => "btn btn-large btn-primary", "data-toggle" => "modal", "data-target" => "#new-gif-modal", "data-remote" => false %>
 <%= yield %>
 
+<!-- Modal -->
+<div class="modal fade" id="new-gif-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add a new gif!</h4>
+      </div>
+      <div class="modal-body">
+        <%= render "gif/form" %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
