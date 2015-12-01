@@ -8,6 +8,8 @@ Rails.application.routes.draw do
    root 'gifs#index'
 
    resources :user_session, only: [:create, :new, :destroy]
+   delete '/sign_out', to: 'user_session#destroy', as: :sign_out
+   get '/sign_in', to: 'user_session#new', as: :sign_in
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

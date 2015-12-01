@@ -1,5 +1,3 @@
-class UserSession < Authlogic::Session::Base 
-
-  belongs_to :user
+class UserSession < Authlogic::Session::Base
 
 end

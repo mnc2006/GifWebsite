@@ -1,4 +1,4 @@
-<li>Upload Gif <%= link_to gif.user_id, "data-remote" => false, "data-toggle" => "modal", "data-target" => "#gif-modal-#{gif.id}" %> on <%= gif.date.to_s(:long) %></li>
+<li>Upload Gif <%= link_to gif.link, "data-remote" => false, "data-toggle" => "modal", "data-target" => "#gif-modal-#{gif.id}" %></li>
 
 <!-- Modal -->
 <div class="modal fade" id="gif-modal-<%= gif.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -6,10 +6,10 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel"><%= gif.date.to_s(:long) %></h4>
+        <h4 class="modal-title" id="myModalLabel"></h4>
       </div>
       <div class="modal-body">
-        <h2><%= gif.user_id %></h2>
+        <h2><%= gif.link %></h2>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
