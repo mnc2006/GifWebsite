@@ -1,11 +1,11 @@
-class UserSessionController < ApplicationController
+class UserSessionsController < ApplicationController
 
   def new
      @user_session = UserSession.new
    end
 
    def create
-     @user_session = UserSession.new(user_session_params)
+     @user_session = UserSession.new(user_sessions_params)
      if @user_session.save
        flash[:success] = "Welcome back!"
        redirect_to root_path
@@ -22,8 +22,8 @@ class UserSessionController < ApplicationController
 
    private
 
-   def user_session_params
-     params.require(:user_session).permit(:email, :password)
+   def user_sessions_params
+     params.require(:user_sessions).permit(:email, :password)
    end
 
 
