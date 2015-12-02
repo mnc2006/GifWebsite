@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
    root 'gifs#index'
 
-   resources :user_session, only: [:create, :new, :destroy]
+   resources :user_sessions, only: [:create, :new, :destroy]
    delete '/sign_out', to: 'user_session#destroy', as: :sign_out
    get '/sign_in', to: 'user_session#new', as: :sign_in
 
