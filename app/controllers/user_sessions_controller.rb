@@ -1,13 +1,13 @@
 class UserSessionsController < ApplicationController
 
   def new
-     @user_session = UserSession.new
+     @user_session = UserSessions.new
    end
 
    def create
-     @user_session = UserSession.new(user_sessions_params)
+     @user_session = UserSessions.new(user_sessions_params)
      if @user_session.save
-       flash[:success] = "Welcome back!"
+       flash[:success] = "Login Successful!"
        redirect_to root_path
      else
        render :new
@@ -23,7 +23,7 @@ class UserSessionsController < ApplicationController
    private
 
    def user_sessions_params
-     params.require(:user_sessions).permit(:email, :password)
+     params.require(:user_sessions).permit(:email, :password, :remember_me)
    end
 
 

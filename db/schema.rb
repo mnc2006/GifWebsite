@@ -14,13 +14,20 @@
 ActiveRecord::Schema.define(version: 20151129235249) do
 
   create_table "gifs", force: :cascade do |t|
-    t.string   "link"
+    t.string   "url"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
+    t.string   "login"
+    t.string   "name"
+    t.string   "crypted_password"
+    t.string   "password_salt"
+    t.string   "persistence_token"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
 end

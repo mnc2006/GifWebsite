@@ -1,3 +1,36 @@
-<ul id="gif_link">
-  <%= render @gifs %>
-</ul>
+
+
+<div class= "page-header">
+  <h2>Everyday Gifs</h2>
+  <h5>Upload Your Favorite Gifs!</h5>
+</div>
+
+<!-- Button trigger modal -->
+<div class= "container-gifs">
+  <div class = "row">
+    <div class="col-xs-3">
+      <a href ='#' data-toggle="modal" data-target="#myModal">
+       <div class= "gif_container" id= "giphy">
+         <% @gifs.each_slice(6) do |row| %>
+          <div class= "row">
+            <%= render "url" %>
+    </div>
+  </div>
+</div>
+<% end %>
+<!-- Modal -->
+<div class="modal fade" id="new-gif-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add a new gif!</h4>
+      </div>
+      <div class="modal-body">
+        <%= render "form" %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>

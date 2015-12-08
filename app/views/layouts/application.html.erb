@@ -6,28 +6,19 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-</div>
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<body>
+<div>
+<%= render partial: "session" %>
+<div class="container">
+  <% flash.each do |name, message| %>
+    <%= content_tag :div, message, class: "alert alert-#{name}" %>
+  <% end %>
+  <div class="col-xs-10">
 
-<%= link_to "Add a new gif!", new_gif_path, :class => "btn btn-large btn-primary", "data-toggle" => "modal", "data-target" => "#new-gif-modal", "data-remote" => false %>
 <%= yield %>
 
-<!-- Modal -->
-<div class="modal fade" id="new-gif-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Add a new gif!</h4>
-      </div>
-      <div class="modal-body">
-        <%= render "gifs/form" %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
+
 </div>
+<%= link_to "Add a new gif!", new_gif_path, :class => "btn btn-large btn-primary", "data-toggle" => "modal", "data-target" => "#new-gif-modal", "data-remote" => false %>
 </body>
 </html>

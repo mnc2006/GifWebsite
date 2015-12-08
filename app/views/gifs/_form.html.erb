@@ -1,4 +1,4 @@
-<%= bootstrap_form_for(@gif) do |f| %>
-  <%= f.text_field :link, :class => "link_field" %>
-  <%= f.submit %>
+<%= bootstrap_form_for(@gif, remote: true) do |f| %>
+  <%= f.text_field :url, placeholder: "Upload Gif Here" %>
+  <%= f.submit "Upload"%>
 <% end %>

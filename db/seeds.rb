@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+20.times do
+  gif= Gif.create
+  gif.url = "http://i.giphy.com/MKzPu2pHQxyyA.gif"
+  gif.save!
+end

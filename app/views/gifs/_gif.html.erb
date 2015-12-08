@@ -1,4 +1,4 @@
-<li>Upload Gif <%= link_to gif.link, "data-remote" => false, "data-toggle" => "modal", "data-target" => "#gif-modal-#{gif.id}" %></li>
+<li>Upload Gif <%= link_to imgage_tag(gif.url, class: "img-responsive") "data-remote" => false, "data-toggle" => "modal", "data-target" => "#gif-modal-#{gif.id}" %></li>
 
 <!-- Modal -->
 <div class="modal fade" id="gif-modal-<%= gif.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -9,7 +9,8 @@
         <h4 class="modal-title" id="myModalLabel"></h4>
       </div>
       <div class="modal-body">
-        <h2><%= gif.link %></h2>
+        <p><%= link_to imgage_tag(gif.url, class: "img-responsive"), "#{gif.url}"%></p>
+        <p>Uploaded on: <%= gif.created_at.to_formatted_s(:long) %></p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

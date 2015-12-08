@@ -1,8 +1,20 @@
 class UserController < ApplicationController
 
-acts_as_authlogic do |c|
-  c.crypto_provider = Authlogic::CryptoProviders::BCrypt
-  end
+
+def new
+  @user = User.new(user_params)
+end
+
+
+private
+
+def set_user
+  @user = User.find(params[:id])
+end
+
+def user_params
+  params.require(:user).permit(:login, :password, :email)
+end
 
 
 end

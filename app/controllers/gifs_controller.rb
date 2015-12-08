@@ -3,19 +3,17 @@ class GifsController < ApplicationController
   def index
      @gifs = Gif.order("created_at DESC")
      @gif = Gif.new
+     @user = User.new
    end
 
-   def show
-     @gifs = Gif.find(params[:id])
-   end
-
-   def new
-     @gifs = Gif.new
-   end
+def new
+end
 
    def create
+     @gifs= Gif.all
      @gifs = Gif.new(gif_params)
-     if @gifs.save
+     @gifs.user = current_user
+     if @gif.save!
        respond_to do |format|
          format.html {redirect_to root_url}
          format.js { }
@@ -28,7 +26,7 @@ class GifsController < ApplicationController
    private
 
    def gif_params
-     params.require(:gif).permit(:user_id, :link)
+     params.require(:gif).permit(:url)
    end
 
 
